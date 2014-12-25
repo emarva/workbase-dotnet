@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E9F41D2-6E94-450B-9E05-5D6D05656F4C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tester</RootNamespace>
+    <AssemblyName>Tester</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="fGE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGE.Designer.cs">
+      <DependentUpon>fGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fValidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fValidacion.Designer.cs">
+      <DependentUpon>fValidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPermisos.Designer.cs">
+      <DependentUpon>fPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPostgreSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPostgreSQL.Designer.cs">
+      <DependentUpon>fPostgreSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMain.Designer.cs">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMapa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMapa.Designer.cs">
+      <DependentUpon>fMapa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMySQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMySQL.Designer.cs">
+      <DependentUpon>fMySQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPruebasVarias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPruebasVarias.designer.cs">
+      <DependentUpon>fPruebasVarias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPrueba1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPrueba1.Designer.cs">
+      <DependentUpon>fPrueba1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fPrueba2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPrueba2.Designer.cs">
+      <DependentUpon>fPrueba2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fSeguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSeguridad.Designer.cs">
+      <DependentUpon>fSeguridad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fGE.resx">
+      <DependentUpon>fGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPermisos.resx">
+      <DependentUpon>fPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPostgreSQL.resx">
+      <DependentUpon>fPostgreSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMain.resx">
+      <DependentUpon>fMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMapa.resx">
+      <DependentUpon>fMapa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMySQL.resx">
+      <DependentUpon>fMySQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPruebasVarias.resx">
+      <DependentUpon>fPruebasVarias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPrueba1.resx">
+      <DependentUpon>fPrueba1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPrueba2.resx">
+      <DependentUpon>fPrueba2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSeguridad.resx">
+      <DependentUpon>fSeguridad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fValidacion.resx">
+      <DependentUpon>fValidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Prueba_DAO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgform.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hoppipolla_by_iNicKeoN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\WorkBase.DataLayer.csproj">
+      <Project>{58250E4D-0CD0-4BBF-8470-0A2DB01D05F9}</Project>
+      <Name>WorkBase.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\liveConnector\WorkBase.liveConnector.csproj">
+      <Project>{D10BBDEC-2A03-4854-BCB5-862009ADB580}</Project>
+      <Name>WorkBase.liveConnector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\WorkBase.Shared.csproj">
+      <Project>{293C0892-0311-4E9F-BC71-065029230BDA}</Project>
+      <Name>WorkBase.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI\WorkBase.UI.csproj">
+      <Project>{CF361651-EDAF-4F67-9976-CC74748BE087}</Project>
+      <Name>WorkBase.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgform2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

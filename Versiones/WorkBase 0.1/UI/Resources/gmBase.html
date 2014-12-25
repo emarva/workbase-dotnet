@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Google Maps</title>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor={SENSOR}"></script>
+<script type="text/javascript">
+    var map;
+	var latLng;	
+	var marcadores = null;
+	var polilineas = null;
+	var poligonos = null;
+    var coordenadas = null;
+	var infoWindowMarcadores = null;
+	
+	function initialize() {
+		var latlng = new google.maps.LatLng({LATITUD}, {LONGITUD});
+		var opciones = {
+			zoom: {ZOOM},
+			center: latlng,			
+			draggableCursor: '{CURSOR}',
+			mapTypeId: google.maps.MapTypeId.{TIPO_MAPA},
+			navigationControl: {CONTROLES_NAVEGACION},
+			mapTypeControl: {CONTROLES_TIPO_MAPA},
+			scaleControl: {CONTROLES_ESCALA}
+		};
+
+		this.map = new google.maps.Map(document.getElementById("map_canvas"), opciones);
+
+		google.maps.event.addListener(this.map, 'click', function (e){
+            latLng = e.latLng;
+		});
+	}  
+
+    // Muestra los controles de navegacion
+	function mostrarControlesNavegacion(mostrar) {
+        this.map.setOptions({
+            navigationControl: mostrar
+        });
+	}
+
+    // Muestra los controles para cambiar el tipo de mapa
+	function mostrarControlesTipoMapa(mostrar) {
+        this.map.setOptions({
+            mapTypeControl: mostrar
+        });
+	}
+
+    // Muestra los controles de escala
+	function mostrarControlesEscala(mostrar) {
+        this.map.setOptions({
+            scaleControl: mostrar
+        });
+	}
+	
+    // Establece el centro
+	function establecerCentro(latitud, longitud)
+	{
+		var centro = new google.maps.LatLng(latitud, longitud);
+		this.map.setCenter(centro);
+	}
+
+    // Obtiene el centro actual
+    function obtenerCentro() {
+		return this.map.getCenter().lat() + "," + this.map.getCenter().lng();
+	}
+
+    // Establece el zoom
+	function establecerZoom(zoom) {
+		this.map.setZoom(zoom);
+	}
+
+    // Obtiene el zoom actual
+  	function obtenerZoom() {
+		return this.map.getZoom();
+	}
+	
+    // Cambia el tipo de mapa
+	function cambiarTipoMapa(tipo) {
+		switch (tipo) {
+			case "ROADMAP": this.map.setMapTypeId(google.maps.MapTypeId.ROADMAP); break;
+			case "SATELLITE": this.map.setMapTypeId(google.maps.MapTypeId.SATELLITE); break;
+			case "HYBRID": this.map.setMapTypeId(google.maps.MapTypeId.HYBRID); break;
+			case "TERRAIN": this.map.setMapTypeId(google.maps.MapTypeId.TERRAIN); break;
+		}
+	}	
+
+    // Obtiene la posicion actual
+	function obtenerPosicion() {
+		return this.latLng.lat() + "," + this.latLng.lng();
+	}
+
+    // Agrega un nuevo marcador
+	function agregarMarcador(latitud, longitud, icono, titulo, contenido) {
+        // Inicializo la matriz de marcadores
+        if (this.marcadores == null)
+            this.marcadores = new Array();
+
+        // Inicializo la matriz de InfoWindow
+        if (this.infoWindowMarcadores == null)
+            this.infoWindowMarcadores = new Array();
+
+        // Creo el marcador
+		var latlng_marcador = new google.maps.LatLng(latitud, longitud);
+		this.marcadores.push(new google.maps.Marker({
+				position: latlng_marcador,
+				map: this.map,
+				icon: (icono != null) ? icono : '',
+				title: (titulo != null) ? titulo : ''				
+		}));
+
+        // Verifico si hay contenido para el InfoWindow
+		if (contenido != null) {
+			var indiceMarc = this.marcadores.length - 1;
+			var indiceIW = this.infoWindowMarcadores.length;
+
+			this.infoWindowMarcadores.push(new google.maps.InfoWindow({content: contenido}));
+            google.maps.event.addListener(this.marcadores[indiceMarc], 'click', function() {this.infoWindowMarcadores[indiceIW].open(this.map, this.marcadores[indiceMarc]);});
+		}
+	}
+
+    // Elimina un marcador
+	function eliminarMarcador(indice) {
+        if (this.marcadores[indice]) {
+	        this.marcadores[indice].setMap(null);
+            this.marcadores.splice(indice, 1);
+            this.infoWindowMarcadores.splice(indice, 1);
+        }
+	}
+
+    // Elimina todos los marcadores
+	function eliminarMarcadores() {
+		for (i in this.marcadores) {
+			this.marcadores[i].setMap(null);
+		}
+		
+		this.marcadores = null;
+		this.infoWindowMarcadores = null;
+	}
+
+    // Agrega una nueva coordenada
+	function agregarCoordenada(latitud, longitud) {
+        // Inicializo la matriz de coordenadas
+        if (this.coordenadas == null)
+            this.coordenadas = new Array();
+
+		this.coordenadas.push(new google.maps.LatLng(latitud, longitud));
+	}
+
+    // Agrega una nueva polilinea
+	function agregarPolilinea(color, opacidad, ancho) {
+        // Inicializo la matriz de polilineas
+        if (this.polilineas == null)
+            this.polilineas = new Array();
+
+        // Creo la polilinea
+		this.polilineas.push(new google.maps.Polyline({
+			path: this.coordenadas,
+			strokeColor: (color != null) ? color : "#FF0000",
+			strokeOpacity: (opacidad != null) ? opacidad : 1.0,
+			strokeWeight: (ancho != null) ? ancho : 2
+		}));
+
+        // Agregro la polilinea al mapa
+		this.polilineas[this.polilineas.length - 1].setMap(this.map);
+		this.coordenadas = null;
+	}
+
+    // Elimina una polilinea
+	function eliminarPolilinea(indice) {
+        if (this.polilineas[indice]) {
+		    this.polilineas[indice].setMap(null);
+            this.polilineas.splice(indice, 1);
+        }
+	}
+
+    // Elimina todas las polilineas
+	function eliminarPolilineas() {
+		for (i in this.polilineas) {
+			this.polilineas[i].setMap(null);
+		}
+
+		this.polilineas = null;
+	}
+
+    // Agrega un nuevo poligono
+	function agregarPoligono(color, opacidad, ancho, rellenoColor, rellenoOpacidad) {
+        // Inicializo la matriz de poligonos
+        if (this.poligonos == null)
+            this.poligonos = new Array();
+
+        // Creo el poligono
+		this.poligonos.push(new google.maps.Polygon({
+			paths: this.coordenadas,
+			strokeColor: (color != null) ? color : "#FF0000",
+			strokeOpacity: (opacidad != null) ? opacidad : 0.8,
+		    strokeWeight: (ancho != null) ? ancho : 2,
+		    fillColor: (rellenoColor != null) ? rellenoColor : "#000000",
+			fillOpacity: (rellenoOpacidad != null) ? rellenoOpacidad : 0.35
+		}));
+
+        // Agrego el poligono al mapa
+		this.poligonos[poligonos.length - 1].setMap(this.map);
+		this.coordenadas = null;
+	}
+
+    // Elimina un poligono
+	function eliminarPoligono(indice) {
+        if (this.poligonos[indice]) {        
+		    this.poligonos[indice].setMap(null);
+            this.poligonos.splice(indice, 1);
+        }
+	}
+
+    // Elimina todos los poligonos
+	function eliminarPoligonos() {
+		for (i in this.poligonos) {
+			this.poligonos[i].setMap(null);
+		}
+
+		this.poligonos = null;
+	}
+</script>
+<style type="text/css">
+    html { height: 100% }
+    body { height: 100%; margin: 0px; padding: 0px }
+    #map_canvas { height: 100% }
+</style>
+</head>
+<body onload="initialize()">
+  <div id="map_canvas"></div>
+</body>
+</html>

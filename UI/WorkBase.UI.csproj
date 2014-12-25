@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CF361651-EDAF-4F67-9976-CC74748BE087}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DevO2.UI</RootNamespace>
+    <AssemblyName>DevO2.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>DevO2.UI.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutDialogForm.Designer.cs">
+      <DependentUpon>AboutDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ErrorManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorManagerForm.Designer.cs">
+      <DependentUpon>ErrorManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoogleEarthViewer\GEKmlCoord.cs" />
+    <Compile Include="GoogleEarthViewer\GEKmlEvent.cs" />
+    <Compile Include="GoogleEarthViewer\GEKmlLineString.cs" />
+    <Compile Include="GoogleEarthViewer\GEKmlLookAt.cs" />
+    <Compile Include="GoogleEarthViewer\GEKmlNetworkLink.cs" />
+    <Compile Include="GoogleEarthViewer\GEKmlPolygon.cs" />
+    <Compile Include="GoogleEarthViewer\GEKmlPlacemark.cs" />
+    <Compile Include="GoogleEarthViewer\GEKmlStyle.cs" />
+    <Compile Include="GMapsViewer\GMapsPolyline.cs" />
+    <Compile Include="GMapsViewer\GMapsPolygon.cs" />
+    <Compile Include="GMapsViewer\GMapsLatLng.cs" />
+    <Compile Include="GMapsViewer\GMapsMarker.cs" />
+    <Compile Include="GoogleEarthViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GoogleEarthViewer.Designer.cs">
+      <DependentUpon>GoogleEarthViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionsSection.cs" />
+    <Compile Include="ComboBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboBoxEx.Designer.cs">
+      <DependentUpon>ComboBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageViewer.Designer.cs">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Line3D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Line3D.Designer.cs">
+      <DependentUpon>Line3D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulesManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModulesManager.Designer.cs">
+      <DependentUpon>ModulesManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionsLoader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PermissionsLoader.Designer.cs">
+      <DependentUpon>PermissionsLoader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionsManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PermissionsManager.Designer.cs">
+      <DependentUpon>PermissionsManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PermissionsProfile.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Slideshow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Slideshow.Designer.cs">
+      <DependentUpon>Slideshow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabControlEx.Designer.cs">
+      <DependentUpon>TabControlEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPageForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TabPageForm.Designer.cs">
+      <DependentUpon>TabPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GMapsViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GMapsViewer.Designer.cs">
+      <DependentUpon>GMapsViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="TitleLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TitleLabel.Designer.cs">
+      <DependentUpon>TitleLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidatorControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ValidatorControls.Designer.cs">
+      <DependentUpon>ValidatorControls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidatorItem.cs" />
+    <Compile Include="Wizard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wizard.Designer.cs">
+      <DependentUpon>Wizard.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ComboBoxEx.resx">
+      <DependentUpon>ComboBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorManagerForm.resx">
+      <DependentUpon>ErrorManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoogleEarthViewer.resx">
+      <DependentUpon>GoogleEarthViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabControlEx.resx">
+      <DependentUpon>TabControlEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GMapsViewer.resx">
+      <DependentUpon>GMapsViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPageForm.resx">
+      <DependentUpon>TabPageForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutDialogForm.resx">
+      <DependentUpon>AboutDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Line3D.resx">
+      <DependentUpon>Line3D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Slideshow.resx">
+      <DependentUpon>Slideshow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\WorkBase.Shared.csproj">
+      <Project>{293C0892-0311-4E9F-BC71-065029230BDA}</Project>
+      <Name>WorkBase.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\geBase.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\gmBase.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DevO2.UI.snk" />
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

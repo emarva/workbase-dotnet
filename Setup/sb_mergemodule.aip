@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT type="Advanced Installer" CreateVersion="7.2.1" version="7.2.1" modules="msm" RootPath="." Language="es">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="." IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="Softduo.CommonLibs.dll" ComponentId="{83F2DECF-A911-43BF-8E29-25D812FE4CDD}" Directory_="APPDIR" Attributes="0" KeyPath="Softduo.CommonLibs.dll"/>
+    <ROW Component="Softduo.DataLayer.dll" ComponentId="{E7E54408-F77E-4DB8-8255-ED020B227251}" Directory_="APPDIR" Attributes="0" KeyPath="Softduo.DataLayer.dll"/>
+    <ROW Component="Softduo.UI.dll" ComponentId="{B8197F00-E3AE-4EF3-8AB2-12CB8750AFA5}" Directory_="APPDIR" Attributes="0" KeyPath="Softduo.UI.dll"/>
+    <ROW Component="Softduo.liveConnector.dll" ComponentId="{E7EA55F2-5B82-456E-A805-3EB77F075B3E}" Directory_="APPDIR" Attributes="0" KeyPath="Softduo.liveConnector.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="TargetFeature" Title="TargetFeature" Description="Descripción" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="Softduo.CommonLibs.dll Softduo.DataLayer.dll Softduo.liveConnector.dll Softduo.UI.dll"/>
+    <ATTRIBUTE name="CurrentFeature" value="TargetFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Softduo.CommonLibs.dll" Component_="Softduo.CommonLibs.dll" FileName="Softdu~1.dll|Softduo.CommonLibs.dll" Attributes="0" SourcePath="..\CommonLibs\bin\Release\Softduo.CommonLibs.dll" SelfReg="false" Sequence="1"/>
+    <ROW File="Softduo.DataLayer.dll" Component_="Softduo.DataLayer.dll" FileName="Softdu~2.dll|Softduo.DataLayer.dll" Attributes="0" SourcePath="..\DataLayer\bin\Release\Softduo.DataLayer.dll" SelfReg="false" Sequence="2"/>
+    <ROW File="Softduo.UI.dll" Component_="Softduo.UI.dll" FileName="Softdu~4.dll|Softduo.UI.dll" Attributes="0" SourcePath="..\UI\bin\Release\Softduo.UI.dll" SelfReg="false" Sequence="4"/>
+    <ROW File="Softduo.liveConnector.dll" Component_="Softduo.liveConnector.dll" FileName="Softdu~3.dll|Softduo.liveConnector.dll" Attributes="0" SourcePath="..\liveConnector\bin\Release\Softduo.liveConnector.dll" SelfReg="false" Sequence="3"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="es" InstallationType="4"/>
+    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_es.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="MSMSequences.aip" Path="&lt;AI_FRAGS&gt;MSMSequences.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAssemblyComponent">
+    <ROW Component_="Softduo.CommonLibs.dll" Feature_="TargetFeature" Attributes="0"/>
+    <ROW Component_="Softduo.DataLayer.dll" Feature_="TargetFeature" Attributes="0"/>
+    <ROW Component_="Softduo.liveConnector.dll" Feature_="TargetFeature" Attributes="0"/>
+    <ROW Component_="Softduo.UI.dll" Feature_="TargetFeature" Attributes="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAssemblyNameComponent">
+    <ROW Component_="Softduo.CommonLibs.dll" Name="Name" Value="Softduo.CommonLibs" Sync="false"/>
+    <ROW Component_="Softduo.CommonLibs.dll" Name="Culture" Value="neutral" Sync="false"/>
+    <ROW Component_="Softduo.CommonLibs.dll" Name="Version" Value="1.0.0.0" Sync="false"/>
+    <ROW Component_="Softduo.CommonLibs.dll" Name="PublicKeyToken" Value="b17d157c6ee52c82" Sync="false"/>
+    <ROW Component_="Softduo.CommonLibs.dll" Name="ProcessorArchitecture" Value="MSIL" Sync="false"/>
+    <ROW Component_="Softduo.DataLayer.dll" Name="Name" Value="Softduo.DataLayer" Sync="false"/>
+    <ROW Component_="Softduo.DataLayer.dll" Name="Culture" Value="neutral" Sync="false"/>
+    <ROW Component_="Softduo.DataLayer.dll" Name="Version" Value="1.0.0.0" Sync="false"/>
+    <ROW Component_="Softduo.DataLayer.dll" Name="PublicKeyToken" Value="3be2008c28d8e95b" Sync="false"/>
+    <ROW Component_="Softduo.DataLayer.dll" Name="ProcessorArchitecture" Value="MSIL" Sync="false"/>
+    <ROW Component_="Softduo.liveConnector.dll" Name="Name" Value="Softduo.liveConnector" Sync="false"/>
+    <ROW Component_="Softduo.liveConnector.dll" Name="Culture" Value="neutral" Sync="false"/>
+    <ROW Component_="Softduo.liveConnector.dll" Name="Version" Value="1.0.0.0" Sync="false"/>
+    <ROW Component_="Softduo.liveConnector.dll" Name="PublicKeyToken" Value="0c7715ce20653111" Sync="false"/>
+    <ROW Component_="Softduo.liveConnector.dll" Name="ProcessorArchitecture" Value="MSIL" Sync="false"/>
+    <ROW Component_="Softduo.UI.dll" Name="Name" Value="Softduo.UI" Sync="false"/>
+    <ROW Component_="Softduo.UI.dll" Name="Culture" Value="neutral" Sync="false"/>
+    <ROW Component_="Softduo.UI.dll" Name="Version" Value="1.0.0.0" Sync="false"/>
+    <ROW Component_="Softduo.UI.dll" Name="PublicKeyToken" Value="cc4b38b6ab0a2dbc" Sync="false"/>
+    <ROW Component_="Softduo.UI.dll" Name="ProcessorArchitecture" Value="MSIL" Sync="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsmModuleSignatureComponent">
+    <ROW ModuleID="MergeMod" Version="1.0" GUID="7D910DC8_D83F_4465_91E1_A85808762A70" Name="Sistema Base" Manufacturer="Daniel Nuñez S." Comments="La base de datos contiene la lógica y los datos necesarios para instalar &lt;module name&gt; componente."/>
+  </COMPONENT>
+</DOCUMENT>
